@@ -12,6 +12,8 @@ permission:
     "opencode import *": allow
     "opencode export *": allow
     "opencode session list *": allow
+    "jq *": allow
+    "grep *": allow
 ---
 
 <role>
@@ -33,10 +35,14 @@ When invoked, determine the session source and follow the corresponding workflow
    session ID from the output. Then run `opencode export <session-id>` to
    retrieve the full structured JSON.
    Note the imported session ID in your output so the user can clean it up if desired.
-2. Read the `agent` field from the first `UserMessage` in the export JSON.
-   If absent, ask the user which agent was being evaluated before proceeding.
-3. Read the `system` field from the first `UserMessage` in the export JSON.
-   If absent, ask the user to provide the agent's prompt before proceeding.
+2. Scan all `UserMessage` entries in the export JSON and collect the unique
+   set of `agent` values. If your invocation message already names a specific
+   agent, use that agent and skip to step 3. Otherwise, present the list of
+   agents found and ask which one to evaluate. Wait for the answer before
+   proceeding.
+3. Once the target agent is identified, find the first `UserMessage` in the
+   export JSON where `agent` matches. Read its `system` field as the agent's
+   prompt. If absent, ask the user to provide it before proceeding.
    </remote_session>
 
 <current_session>
@@ -45,10 +51,14 @@ When invoked, determine the session source and follow the corresponding workflow
    active session). Then run `opencode export <session-id>` to retrieve the full
    structured JSON.
    Note the session ID in your output so the user can reference it if needed.
-2. Read the `agent` field from the first `UserMessage` in the export JSON.
-   If absent, ask the user which agent was being evaluated before proceeding.
-3. Read the `system` field from the first `UserMessage` in the export JSON.
-   If absent, ask the user to provide the agent's prompt before proceeding.
+2. Scan all `UserMessage` entries in the export JSON and collect the unique
+   set of `agent` values. If your invocation message already names a specific
+   agent, use that agent and skip to step 3. Otherwise, present the list of
+   agents found and ask which one to evaluate. Wait for the answer before
+   proceeding.
+3. Once the target agent is identified, find the first `UserMessage` in the
+   export JSON where `agent` matches. Read its `system` field as the agent's
+   prompt. If absent, ask the user to provide it before proceeding.
    </current_session>
 
 Then, regardless of source, continue with the following steps:
