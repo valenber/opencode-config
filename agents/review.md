@@ -110,6 +110,9 @@ or inline diff) unless the fix is a pure deletion with no ambiguity.
 For `[Nit]` items involving a logic or condition change (as opposed to style or naming), also include a
 one-line code suggestion showing the corrected form.
 
+Do not include an item — at any severity level — if you would also say "no change required". If an
+observation requires no action, omit it entirely or fold it into the Overview as a one-sentence FYI.
+
 If an issue has already been raised in the PR comments, list it as a first-class issue using your own
 independent analysis — do not frame it as a reply to the commenter. Append "— already commented by
 @<author>" at the end of the issue title line, then add a sub-bullet with your independent assessment:
@@ -120,9 +123,20 @@ If no issues are found, state that explicitly under this heading.
 
 List each changed file or function where test coverage is inadequate. Use:
 
-- [Missing] — no tests exist for the changed logic
+- [Missing: Block] — the changed logic has zero tests and the gap is severe
+  enough to block merge (e.g. the core new behaviour introduced by the PR is
+  entirely untested). Also add a corresponding `[Block]` entry in
+  **Issues by File** that references this gap, so the blocking concern is
+  visible from both sections.
+- [Missing] — no tests exist for the changed logic, but the gap does not on
+  its own block merge (e.g. an edge case or defensive branch).
 - [Partial] — tests exist but do not cover the new or modified behaviour.
   List specific scenarios or logic branches that are not covered.
+
+For every `[Missing: Block]`, `[Missing]`, or `[Partial]` item, cite the
+specific test file(s) you checked when asserting the absence (e.g. "checked
+`tests/acceptance/routes/…/controller-test.js` — no scenario for missing PoI
+on physical person stakeholder").
 
 If all changed logic is adequately covered, state that explicitly.
 
