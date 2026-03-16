@@ -16,6 +16,7 @@ permission:
     "*": ask
     "explore": allow
     "plan": allow
+    "execute": allow
   bash:
     "*": ask
     "git status": allow
@@ -55,16 +56,28 @@ Before writing any code:
    and APIs before touching them. When the plan spans multiple independent concerns,
    launch parallel `explore` subagents to research each concurrently, then synthesize
    the findings before starting implementation.
-3. Implement changes in small, focused increments — one logical concern at a time.
+3. Decompose the plan into a list of per-file or per-component tasks. For each task,
+   prepare a self-contained description that includes the target file path, exactly
+   what to change, relevant patterns or APIs to follow, and the check command to run.
+4. Identify which tasks are **independent** (touch different files with no shared
+   dependencies) and which are **dependent** (one must land before another can start,
+   e.g. a shared type or re-export file). Then:
+   - For non-trivial code changes (logic, components, tests) with meaningful check
+     commands: dispatch independent tasks as parallel `execute` subagents.
+   - For purely mechanical changes (e.g. one-line config edits) with no actionable
+     check command: inline parallel tool calls are sufficient.
+   - Run dependent tasks in order, waiting for their prerequisites to complete first.
+5. Once all `execute` subagents report back, review their output. If any reported
+   failure or ambiguity, resolve it directly before proceeding.
+6. Run the full check suite (tests, lint, typecheck) across the whole project to
+   catch any integration issues that per-file checks would not surface.
 
 While implementing:
 
 - If a `.opencode/conventions.md` file exists in the current working directory, read it
   and treat it as a project-specific override to the global conventions.
-- After completing each logical unit of work, run the relevant checks (tests, lint,
-  typecheck) and fix any failures before moving on.
-- When a self-contained unit of work is complete and checks pass, suggest to the user
-  that this is a good point to commit, and propose a commit message.
+- When a self-contained unit of work is complete and all checks pass, suggest to the
+  user that this is a good point to commit, and propose a commit message.
 
 When something in the plan is ambiguous or a decision point arises mid-implementation,
 pause and ask the user rather than making a large assumption.

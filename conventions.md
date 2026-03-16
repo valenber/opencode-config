@@ -1,6 +1,7 @@
 # Coding Conventions
 
 ## Commits
+
 - Make small, focused commits that address a single issue or feature — the application should still work after each commit
 - Write commit messages in the imperative mood (e.g. "Fix bug in user login" not "Fixed bug in user login")
 - Keep commit messages concise — do not explain the code in the message
@@ -8,21 +9,32 @@
 - Before committing, run tests, lint, typecheck, and format if supported by the repository
 
 ## Code Style
+
 - Never typecast to `any`
 - Avoid inline styles — use CSS classes instead; if inline styles are absolutely necessary, add a comment explaining why
 - Use minimal comments — write self-explanatory code with meaningful variable and function names; only comment to explain intent or complex logic that cannot be easily understood
 - Always use scripts from `package.json` to run commands (e.g. `npm run lint`, not `eslint` directly)
 
 ## Approach
+
 - Prefer editing existing files over creating new ones
 - Analyse the approach and suggest improvements rather than blindly following instructions
 
 ## Ember / QUnit Projects
+
 - When working in an Ember project (identified by `ember-cli-build.js` or `ember-cli` in `package.json`), use the `ember_test` MCP tool to run the test suite instead of raw bash commands
 
 ## Library & Framework Documentation
+
 - When exploring unfamiliar APIs, checking library usage, or looking up framework-specific patterns, use the `context7` MCP tools before guessing or searching the web
 
 ## OpenCode Configuration
+
+When we are talking about agent configuratons it almost always means opencode
+configurations, not claude code configurations. So, when you see a reference to
+"agent configuration" or "conventions" in the context of our conversation, it is
+referring to OpenCode's configuration files, unless explicitly stated otherwise.
+Here are the key OpenCode configuration files to be aware of:
+
 - Agent prompt files live at `~/.config/opencode/agents/<agent-name>.md` — start there when a task involves reading or modifying an agent's prompt
 - The global conventions file is `~/.config/opencode/conventions.md`
