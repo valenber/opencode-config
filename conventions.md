@@ -22,3 +22,7 @@
 
 ## Library & Framework Documentation
 - When exploring unfamiliar APIs, checking library usage, or looking up framework-specific patterns, use the `context7` MCP tools before guessing or searching the web
+
+## OpenCode Configuration
+- Agent prompt files live at `~/.config/opencode/agents/<agent-name>.md` — start there when a task involves reading or modifying an agent's prompt
+- The global conventions file is `~/.config/opencode/conventions.md`

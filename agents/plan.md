@@ -3,6 +3,8 @@ mode: all
 color: "#4A90D9"
 steps: 30
 permission:
+  external_directory:
+    "~/.config/opencode/**": allow
   task:
     "*": ask
     "explore": allow

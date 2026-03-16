@@ -7,6 +7,8 @@ tools:
   write: false
   context7: true
 permission:
+  external_directory:
+    "~/.config/opencode/**": allow
   task:
     "*": ask
     "explore": allow

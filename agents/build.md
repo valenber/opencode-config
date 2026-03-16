@@ -7,6 +7,11 @@ tools:
   context7: true
   ember-cli: true
 permission:
+  external_directory:
+    "~/.config/opencode/**": allow
+  edit:
+    "~/.config/opencode/**": allow
+    "*": ask
   task:
     "*": ask
     "explore": allow
