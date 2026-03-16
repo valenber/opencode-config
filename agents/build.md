@@ -5,6 +5,7 @@ color: "#27AE60"
 steps: 50
 tools:
   context7: true
+  ember-cli: true
 permission:
   task:
     "*": ask

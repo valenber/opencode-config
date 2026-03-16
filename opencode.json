@@ -12,6 +12,10 @@
     "notion": {
       "type": "remote",
       "url": "https://mcp.notion.com/mcp"
+    },
+    "ember-cli": {
+      "type": "local",
+      "command": ["npx", "-y", "ember-cli-mcp"]
     }
   }
 }

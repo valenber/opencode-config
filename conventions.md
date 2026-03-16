@@ -16,3 +16,9 @@
 ## Approach
 - Prefer editing existing files over creating new ones
 - Analyse the approach and suggest improvements rather than blindly following instructions
+
+## Ember / QUnit Projects
+- When working in an Ember project (identified by `ember-cli-build.js` or `ember-cli` in `package.json`), use the `ember_test` MCP tool to run the test suite instead of raw bash commands
+
+## Library & Framework Documentation
+- When exploring unfamiliar APIs, checking library usage, or looking up framework-specific patterns, use the `context7` MCP tools before guessing or searching the web
