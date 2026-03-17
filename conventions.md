@@ -30,11 +30,14 @@
 
 ## OpenCode Configuration
 
-When we are talking about agent configuratons it almost always means opencode
-configurations, not claude code configurations. So, when you see a reference to
-"agent configuration" or "conventions" in the context of our conversation, it is
-referring to OpenCode's configuration files, unless explicitly stated otherwise.
-Here are the key OpenCode configuration files to be aware of:
+All agent and command configuration is done via OpenCode — never via Claude Code.
+Ignore the `.claude/` directory entirely; it is not used in this workflow.
 
-- Agent prompt files live at `~/.config/opencode/agents/<agent-name>.md` — start there when a task involves reading or modifying an agent's prompt
-- The global conventions file is `~/.config/opencode/conventions.md`
+Key OpenCode configuration files:
+
+- **Global conventions:** `~/.config/opencode/conventions.md` (this file)
+- **Global OpenCode config:** `~/.config/opencode/opencode.json`
+- **Agent prompts:** `~/.config/opencode/agents/<agent-name>.md`
+- **Slash commands:** `.opencode/commands/<command>.md` at the project root (e.g. `/Users/valentin.berlin/code/qonto-web/.opencode/commands/open-pr.md`)
+
+When a task involves reading or modifying a slash command, always look in `.opencode/commands/` — never in `.claude/commands/`.
