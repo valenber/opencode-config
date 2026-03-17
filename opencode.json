@@ -1,6 +1,11 @@
 {
   "$schema": "https://opencode.ai/config.json",
   "instructions": ["conventions.md"],
+  "permission": {
+    "notion_notion-*": "ask",
+    "notion_notion-fetch": "allow",
+    "notion_notion-search": "allow"
+  },
   "mcp": {
     "context7": {
       "type": "remote",
