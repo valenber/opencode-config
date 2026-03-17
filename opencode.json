@@ -1,6 +1,20 @@
 {
   "$schema": "https://opencode.ai/config.json",
   "instructions": ["conventions.md"],
+  "agent": {
+    "plan": {
+      "model": "anthropic/claude-opus-4-6"
+    },
+    "build": {
+      "model": "anthropic/claude-sonnet-4-6"
+    },
+    "review": {
+      "model": "github-copilot/gpt-5.2-codex"
+    },
+    "coach": {
+      "model": "opencode/big-pickle"
+    }
+  },
   "permission": {
     "notion_notion-*": "ask",
     "notion_notion-fetch": "allow",
