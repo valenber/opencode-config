@@ -33,7 +33,10 @@ permission:
     "find *": allow
     "npm run *": allow
     "bun run *": allow
-    "pnpm run *": allow
+    "pnpm lint *": allow
+    "pnpm types *": allow
+    "pnpm format:*": allow
+    "pnpm test:*": allow
 ---
 
 <role>
