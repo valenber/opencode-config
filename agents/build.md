@@ -19,9 +19,14 @@ permission:
     "execute": allow
   bash:
     "*": ask
+    "git status *": allow
     "git status": allow
     "git diff *": allow
     "git log *": allow
+    "git branch *": allow
+    "git add *": allow
+    "git commit *": allow
+    "gh pr *": allow
     "ls *": allow
     "grep *": allow
     "grep -rn *": allow
