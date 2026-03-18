@@ -9,10 +9,10 @@ permission:
     "*": allow
   bash:
     "*": deny
-    "npm run lint *": allow
-    "npm run typecheck *": allow
-    "pnpm run lint *": allow
-    "pnpm run typecheck *": allow
+    "rtk npm run lint *": allow
+    "rtk npm run typecheck *": allow
+    "rtk pnpm run lint *": allow
+    "rtk pnpm run typecheck *": allow
 ---
 
 <role>

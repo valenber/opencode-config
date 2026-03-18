@@ -9,11 +9,10 @@ permission:
   webfetch: deny
   bash:
     "*": deny
-    "opencode import *": allow
-    "opencode export *": allow
-    "opencode session list *": allow
-    "jq *": allow
-    "grep *": allow
+    "rtk opencode import *": allow
+    "rtk opencode export *": allow
+    "rtk opencode session list *": allow
+    "rtk jq *": allow
 ---
 
 <role>

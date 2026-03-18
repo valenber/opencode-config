@@ -13,14 +13,12 @@ permission:
   edit: deny
   bash:
     "*": ask
-    "git log *": allow
-    "git diff *": allow
-    "git status *": allow
-    "grep *": allow
-    "find *": allow
-    "ls *": allow
-    "cat *": allow
-    "gh repo view *": allow
+    "rtk git log *": allow
+    "rtk git diff *": allow
+    "rtk git status *": allow
+    "rtk ls *": allow
+    "rtk cat *": allow
+    "rtk gh repo view *": allow
 ---
 
 <role>

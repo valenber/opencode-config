@@ -19,24 +19,21 @@ permission:
     "execute": allow
   bash:
     "*": ask
-    "git status *": allow
-    "git status": allow
-    "git diff *": allow
-    "git log *": allow
-    "git branch *": allow
-    "git add *": allow
-    "git commit *": allow
-    "gh pr *": allow
-    "ls *": allow
-    "grep *": allow
-    "grep -rn *": allow
-    "find *": allow
-    "npm run *": allow
-    "bun run *": allow
-    "pnpm lint *": allow
-    "pnpm types *": allow
-    "pnpm format:*": allow
-    "pnpm test:*": allow
+    "rtk git status *": allow
+    "rtk git status": allow
+    "rtk git diff *": allow
+    "rtk git log *": allow
+    "rtk git branch *": allow
+    "rtk git add *": allow
+    "rtk git commit *": allow
+    "rtk gh pr *": allow
+    "rtk ls *": allow
+    "rtk npm run *": allow
+    "rtk bun run *": allow
+    "rtk pnpm lint *": allow
+    "rtk pnpm types *": allow
+    "rtk pnpm format:*": allow
+    "rtk pnpm test:*": allow
 ---
 
 <role>

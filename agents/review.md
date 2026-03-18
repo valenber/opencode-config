@@ -15,13 +15,13 @@ permission:
   bash:
     "*": ask
     "git *": ask
-    "git diff *": allow
-    "git merge-base *": allow
-    "gh repo view *": allow
-    "gh pr view *": allow
-    "gh pr diff *": allow
-    "gh api repos/*/pulls/*/comments": allow
-    "jq *": allow
+    "rtk git diff *": allow
+    "rtk git merge-base *": allow
+    "rtk gh repo view *": allow
+    "rtk gh pr view *": allow
+    "rtk gh pr diff *": allow
+    "rtk gh api repos/*/pulls/*/comments": allow
+    "rtk jq *": allow
 ---
 
 <role>

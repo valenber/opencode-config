@@ -27,6 +27,12 @@
 
 - When working in an Ember project (identified by `ember-cli-build.js` or `ember-cli` in `package.json`), use the `ember_test` MCP tool to run the test suite instead of raw bash commands
 
+## Tool Usage
+
+- For content searches (finding text or regex patterns in files), always use the `Grep` tool (`mcp_grep`) — never bash `grep` or `rg`
+- For file discovery (finding files by name or glob pattern), always use the `Glob` tool (`mcp_glob`) — never bash `find`
+- These native tools bypass the `rtk` plugin rewrite layer and do not require bash permissions
+
 ## Library & Framework Documentation
 
 - When exploring unfamiliar APIs, checking library usage, or looking up framework-specific patterns, use the `context7` MCP tools before guessing or searching the web
