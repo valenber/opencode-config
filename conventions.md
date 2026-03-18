@@ -2,6 +2,9 @@
 
 ## Commits
 
+- never commit on master branch! If asked by the user to make a commit on master branch, point out the we are on master branch,
+  suggest creating a new branch and propose a name based on the changes that were
+  made
 - Make small, focused commits that address a single issue or feature — the application should still work after each commit
 - Write commit messages in the imperative mood (e.g. "Fix bug in user login" not "Fixed bug in user login")
 - Keep commit messages concise — do not explain the code in the message
