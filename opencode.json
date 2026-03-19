@@ -17,6 +17,15 @@
     }
   },
   "permission": {
+    "read": {
+      "**/.env*": "deny"
+    },
+    "edit": {
+      "**/.env*": "deny"
+    },
+    "grep": {
+      "**/.env*": "deny"
+    },
     "notion_notion-*": "ask",
     "notion_notion-fetch": "allow",
     "notion_notion-search": "allow"
