@@ -11,11 +11,13 @@ permission:
     "~/.config/opencode/**": allow
   edit:
     "~/.config/opencode/**": allow
+    "~/code/**": allow
     "*": ask
   task:
     "*": ask
     "explore": allow
     "plan": allow
+    "general": allow
     "execute": allow
   bash:
     "*": ask

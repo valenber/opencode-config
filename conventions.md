@@ -32,6 +32,7 @@
 - For content searches (finding text or regex patterns in files), always use the `Grep` tool (`mcp_grep`) — never bash `grep` or `rg`
 - For file discovery (finding files by name or glob pattern), always use the `Glob` tool (`mcp_glob`) — never bash `find`
 - These native tools bypass the `rtk` plugin rewrite layer and do not require bash permissions
+- when doing searches never read home directory or .config directory, read subfolder in it that you need. If you are not sure which one it is, ask the user.
 
 ## Library & Framework Documentation
 
