@@ -7,35 +7,11 @@ tools:
   context7: true
   ember-cli: true
 permission:
-  external_directory:
-    "~/.config/opencode/**": allow
-  edit:
-    "~/.config/opencode/**": allow
-    "~/code/**": allow
-    "*": ask
   task:
     "*": ask
     "explore": allow
-    "plan": allow
     "general": allow
     "execute": allow
-  bash:
-    "*": ask
-    "rtk git status *": allow
-    "rtk git status": allow
-    "rtk git diff *": allow
-    "rtk git log *": allow
-    "rtk git branch *": allow
-    "rtk git add *": allow
-    "rtk git commit *": allow
-    "rtk gh pr *": allow
-    "rtk ls *": allow
-    "rtk npm run *": allow
-    "rtk bun run *": allow
-    "rtk pnpm lint *": allow
-    "rtk pnpm types *": allow
-    "rtk pnpm format:*": allow
-    "rtk pnpm test:*": allow
 ---
 
 <role>

@@ -4,27 +4,49 @@
   "instructions": ["conventions.md"],
   "agent": {
     "plan": {
-      "model": "anthropic/claude-opus-4-6"
+      "model": "github-copilot/gpt-5.2-codex"
     },
     "build": {
-      "model": "anthropic/claude-sonnet-4-6"
+      "model": "github-copilot/gpt-5.2-codex"
     },
     "review": {
       "model": "github-copilot/gpt-5.2-codex"
     },
     "coach": {
-      "model": "opencode/big-pickle"
+      "model": "github-copilot/gpt-5.2-codex"
     }
   },
   "permission": {
     "read": {
-      "**/.env*": "deny"
+      "**/.env*": "deny",
+      "/etc/**": "deny",
+      "/System/**": "deny",
+      "/usr/**": "deny",
+      "/var/**": "deny",
+      "~/.ssh/**": "deny",
+      "~/**": "ask"
     },
     "edit": {
-      "**/.env*": "deny"
+      "**/.env*": "deny",
+      "/etc/**": "deny",
+      "/System/**": "deny",
+      "/usr/**": "deny",
+      "/var/**": "deny",
+      "~/.ssh/**": "deny",
+      "~/**": "ask"
     },
     "grep": {
-      "**/.env*": "deny"
+      "**/.env*": "deny",
+      "/etc/**": "deny",
+      "/System/**": "deny",
+      "/usr/**": "deny",
+      "/var/**": "deny",
+      "~/.ssh/**": "deny",
+      "~/**": "ask"
+    },
+    "bash": {
+      "*curl*": "ask",
+      "*wget*": "ask"
     },
     "notion_notion-*": "ask",
     "notion_notion-fetch": "allow",
@@ -45,6 +67,17 @@
     "ember-cli": {
       "type": "local",
       "command": ["npx", "-y", "ember-cli-mcp"]
+    },
+    "reforge-mcp": {
+      "type": "local",
+      "command": [
+        "/Users/valentin.berlin/code/qonto-web/packages/reforge/mcp.sh"
+      ],
+      "enabled": true
+    },
+    "figma": {
+      "type": "remote",
+      "url": "http://127.0.0.1:3845/mcp"
     }
   },
   "plugin": ["rtk"]

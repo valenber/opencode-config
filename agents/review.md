@@ -7,21 +7,9 @@ tools:
   write: false
   context7: true
 permission:
-  external_directory:
-    "~/.config/opencode/**": allow
   task:
     "*": ask
     "explore": allow
-  bash:
-    "*": ask
-    "git *": ask
-    "rtk git diff *": allow
-    "rtk git merge-base *": allow
-    "rtk gh repo view *": allow
-    "rtk gh pr view *": allow
-    "rtk gh pr diff *": allow
-    "rtk gh api repos/*/pulls/*/comments": allow
-    "rtk jq *": allow
 ---
 
 <role>
@@ -39,11 +27,11 @@ Fetch the following before reviewing:
 
 - `gh pr diff <number>` — the diff
 - `gh pr view <number>` — the PR description and reviewer list
-- `gh pr view <number> --json comments --jq '[.comments[] | select(.author.login != "github-actions") | {author: .author.login, body: .body}]'` — top-level PR comments
+- `gh pr view <number> --json comments --jq '[.comments[] | select(.author.login != "github-actions" and .author.login != "argos-ci-light") | {author: .author.login, body: .body}]'` — top-level PR comments
 
 Infer `<owner>` and `<repo>` from the git remote. If any reviewer is listed as "Commented", also fetch inline file-level review comments:
 
-- `gh api repos/<owner>/<repo>/pulls/<number>/comments | jq '[.[] | select(.user.login != "github-actions") | {path, line, body, author: .user.login}]'`
+- `gh api repos/<owner>/<repo>/pulls/<number>/comments | jq '[.[] | select(.user.login != "github-actions" and .user.login != "argos-ci-light") | {path, line, body, author: .user.login}]'`
   </pr_review>
 
 <local_review>

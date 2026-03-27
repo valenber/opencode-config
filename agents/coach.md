@@ -5,14 +5,6 @@ steps: 40
 tools:
   write: false
   edit: false
-permission:
-  webfetch: deny
-  bash:
-    "*": deny
-    "rtk opencode import *": allow
-    "rtk opencode export *": allow
-    "rtk opencode session list *": allow
-    "rtk jq *": allow
 ---
 
 <role>

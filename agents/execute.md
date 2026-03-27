@@ -4,15 +4,6 @@ mode: subagent
 steps: 20
 tools:
   context7: true
-permission:
-  edit:
-    "*": allow
-  bash:
-    "*": deny
-    "rtk npm run lint *": allow
-    "rtk npm run typecheck *": allow
-    "rtk pnpm run lint *": allow
-    "rtk pnpm run typecheck *": allow
 ---
 
 <role>
