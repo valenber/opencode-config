@@ -1,5 +1,5 @@
 ---
-description: Evaluates agent performance duting a session and proposes targeted improvements to the agent's system prompt.
+description: Evaluates agent performance during a session and proposes targeted improvements to the agent's system prompt.
 mode: subagent
 steps: 40
 tools:
